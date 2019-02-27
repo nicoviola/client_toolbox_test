@@ -1,0 +1,19 @@
+# docker-compose.yml
+
+version: '2'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+    command: npm start
+    expose:
+      - 4000
+    ports:
+      - 4000:3000
+    volumes:
+      - .:/app
+
